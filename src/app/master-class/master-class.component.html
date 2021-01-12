@@ -1,0 +1,26 @@
+<!-- main-wrapper -->
+<div class="main-wrapper">
+  <!--  Master Courses -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="font-weight-bold font-2rem">Master Class</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div *ngFor="let data of masterCourse" class="col-6 col-sm-6 col-md-3 col-lg-3 item">
+          <div class="card">
+            <img [src]="forImageUrl + data?.url || 'assets/images/course/1.jpg'" alt="Comedy" class="img-fluid" />
+          </div>
+          <p class="text-muted text-uppercase">{{data?.name}}</p>
+          <p><b>{{data?.desc}}</b></p>
+          <p class="text-muted text-uppercase">{{data?.title}}</p>
+        </div>
+
+       </div>
+    </div>
+  </section>
+</div>
+<!-- end main-wrapper -->
+
