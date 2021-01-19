@@ -5,23 +5,23 @@
         <section class="personal-profile bg-rgb-dark">
           <div class="container">
             <div class="row">
-              <div class="col-lg-4 col-md-6 col-12 my-2">
+              <div *ngFor="let data of editordata" class="col-lg-4 col-md-6 col-12 my-2">
                 <div class="card profile-card">
                   <div class="card-img-block">
                     <img
                       class="img-fluid"
-                      src="assets/images/user-banner.jpg"
+                      [src]="forImageUrl + data?.url_cover||assets/images/user-banner.jpg"
                       alt="Card image cap"
                     />
                   </div>
                   <div class="card-body card-header text-center pt-5">
                     <img
-                      src="assets/images/user.jpg"
+                    [src]="forImageUrl + data?.url_cover||assets/images/user.jpg"
                       alt="profile-image"
                       class="profile"
                     />
-                    <h5 class="card-title my-2">Rohit Sharma</h5>
-                    <p class="card-text mt-3 mb-5">3-7 Year Experience</p>
+                    <h5 class="card-title my-2">{{data?.name}}</h5>
+                    <p class="card-text mt-3 mb-5">{{data?.desc}}</p>
                   </div>
                   <button
                     class="btn card-footer bg-theme-color"
@@ -32,7 +32,7 @@
                   </button>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6 col-12 my-2">
+              <!-- <div class="col-lg-4 col-md-6 col-12 my-2">
                 <div class="card profile-card">
                   <div class="card-img-block">
                     <img
@@ -247,7 +247,7 @@
                     Connect
                   </button>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </section>
